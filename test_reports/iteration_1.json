@@ -1,0 +1,29 @@
+{
+  "summary": "Frontend-only landing page 'TTB KING' tested end-to-end at REACT_APP_BACKEND_URL on desktop (1920x1080) and mobile (390x844). All required data-testid elements render and Telegram links resolve to https://t.me/+ZRXVYah_r0c5ZGU1 with target=_blank. Meta tags (title, og:title, og:description, og:image) verified after a required frontend restart (see note). Ticker cycles, stats counters render final values, FAQ single-mode accordion works, mobile menu opens and sticky CTA appears after scrolling past hero. Two horizontal-overflow bugs found (mobile 429px vs 390px viewport = FAILS required test; desktop 2112px vs 1920px).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Landing page root", "issue": "Mobile horizontal overflow: document.scrollWidth=429px at 390px viewport (~39px overflow). Spec explicitly requires 'no horizontal overflow'. Likely a full-bleed section, marquee, or hero grid causing overflow-x. Add overflow-x: hidden to body/main or fix the offending section width/padding.", "selector": "html/body (mobile 390px)", "priority": "HIGH"},
+      {"component": "Landing page root", "issue": "Desktop horizontal overflow: document.scrollWidth=2112px at 1920px viewport (~192px overflow). Same root cause (likely marquee / grid pattern / signal card). Users get an unwanted horizontal scrollbar on desktop.", "selector": "html/body (desktop 1920px)", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Fix mobile horizontal overflow (390px viewport shows scrollWidth=429). Inspect Testimonials Marquee, Hero grid pattern, and any translate-x elements; add overflow-x: hidden on the outer wrapper or clip container.",
+    "Fix desktop horizontal overflow (1920 -> scrollWidth 2112). Same root cause.",
+    "public/index.html changes are NOT picked up by webpack HMR — I had to `sudo supervisorctl restart frontend` to get the new title/og meta served. This is environment-specific but note: if the user opened the preview before the restart they'd have seen the default 'Emergent | Fullstack App' title. Main agent should also restart frontend when index.html changes."
+  ],
+  "critical_code_review_comments": [
+    "Duplicate data-testid values between desktop nav and mobile menu links (nav-link-features/results/process/community/faq exist on both). Playwright resolves the hidden desktop link first and click fails. Recommend prefixing mobile menu links with mobile-nav-link-* or keeping single instances via responsive rendering.",
+    "public/index.html hot-reload gap: index.html changes require a manual frontend restart in this environment."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "95% (all required elements/hrefs/animations pass; mobile+desktop horizontal overflow are the only failures)"},
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "All content, hrefs, testids, ticker cycling, stat counters, FAQ single-mode accordion, mobile menu toggle, and mobile sticky CTA verified. Only remaining bug is horizontal overflow on both mobile (39px) and desktop (192px). Re-test by measuring document.documentElement.scrollWidth vs clientWidth at 390 and 1920 viewports. Also revisit duplicate data-testid on mobile vs desktop nav links.",
+  "rca of the issue": "Mobile/desktop horizontal overflow: likely caused by (a) the Testimonials marquee track exceeding viewport without an overflow-hidden container, (b) hero grid/pattern element wider than viewport, or (c) a translate-x transformed element. Reproduction: open URL, run `document.documentElement.scrollWidth` in console at width 390 -> 429, at 1920 -> 2112. Mitigation: add `overflow-x: hidden` to <main> or body, or constrain the offending marquee/grid width to 100vw with clip-inline containment."
+}

@@ -14,7 +14,7 @@ import { MobileCTA } from "@/components/landing/MobileCTA";
 export default function Landing() {
   useLenis();
   return (
-    <main className="relative" data-testid="landing-page">
+    <main className="relative overflow-x-clip" data-testid="landing-page">
       <Navbar />
       <Hero />
       <Marquee />

@@ -45,7 +45,7 @@ const Card = ({ f, i }) => {
 };
 
 export const Features = () => (
-  <section id="features" className="relative py-24 sm:py-32" data-testid="features-section">
+  <section id="features" className="relative overflow-hidden py-24 sm:py-32" data-testid="features-section">
     <div className="orb left-[-15%] top-1/3 h-[480px] w-[480px] bg-cyan-600/15" />
     <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
       <SectionHead

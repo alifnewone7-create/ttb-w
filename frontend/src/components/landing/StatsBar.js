@@ -22,7 +22,7 @@ const Counter = ({ value, prefix = "", suffix = "" }) => {
 };
 
 export const StatsBar = () => (
-  <section id="stats" className="relative py-24 sm:py-32" data-testid="stats-section">
+  <section id="stats" className="relative overflow-hidden py-24 sm:py-32" data-testid="stats-section">
     <div className="orb right-[-10%] top-0 h-[420px] w-[420px] bg-blue-700/20" />
     <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
       <SectionHead id="stats" eyebrow="Track record" title={<>Numbers that come from <span className="text-gradient">discipline</span>, not luck.</>} />
