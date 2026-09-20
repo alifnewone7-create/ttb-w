@@ -1,0 +1,120 @@
+{
+  "project_name": "TTB KING",
+  "app_type": "landing_page",
+  "theme": "Blue & Black Gradient High-Tech Trading Community",
+  "og_metadata": {
+    "title": "TTB KING | Join Free Telegram Channel To Learn Trading",
+    "description": "Join TTB KING | a growing binary trading community for market insights, trading strategies, educational content, and community discussions. Learn, analyze & trade responsibly with the community.",
+    "logo_avatar_url": "https://customer-assets-m6fa6gv7.emergentagent.net/job_d2855228-d9dc-4f80-afa5-0c795818d0a1/artifacts/a3l5rfmp_image.png",
+    "telegram_url": "https://t.me/+ZRXVYah_r0c5ZGU1"
+  },
+  "typography": {
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap",
+    "heading_font": "Outfit, sans-serif",
+    "body_font": "Plus Jakarta Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-snug",
+      "h3_card": "text-xl sm:text-2xl font-semibold tracking-tight",
+      "body_lg": "text-base sm:text-lg text-slate-300 leading-relaxed",
+      "body_sm": "text-xs sm:text-sm text-slate-400 leading-normal",
+      "badge": "font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full font-semibold"
+    },
+    "forbidden_fonts": ["Inter", "Roboto", "Space Grotesk", "Open Sans"]
+  },
+  "colors": {
+    "background_main": "#030712",
+    "background_secondary": "#070D1B",
+    "card_background": "rgba(11, 22, 44, 0.7)",
+    "card_border": "rgba(56, 189, 248, 0.15)",
+    "primary_gradient": "bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400",
+    "glow_cyan": "#00F0FF",
+    "glow_blue": "#2563EB",
+    "accent_emerald": "#10B981",
+    "text_primary": "#F8FAFC",
+    "text_secondary": "#94A3B8",
+    "text_muted": "#64748B",
+    "button_primary": "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white shadow-[0_0_25px_rgba(37,99,235,0.4)]",
+    "button_secondary": "bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60"
+  },
+  "visual_enhancers": {
+    "grid_overlay": "bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40",
+    "glow_orbs": "absolute w-96 h-96 rounded-full bg-blue-600/20 blur-[120px] pointer-events-none",
+    "glass_header": "backdrop-blur-xl bg-[#030712]/85 border-b border-cyan-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]",
+    "bento_border": "border border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 shadow-[0_0_15px_rgba(0,240,255,0.05)]",
+    "card_hover_lift": "hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(37,99,235,0.25)] transition-all duration-300"
+  },
+  "image_urls": {
+    "logo_avatar": "https://customer-assets-m6fa6gv7.emergentagent.net/job_d2855228-d9dc-4f80-afa5-0c795818d0a1/artifacts/a3l5rfmp_image.png",
+    "hero_chart_preview": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "signals_feature_chart": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "live_session_dashboard": "https://images.pexels.com/photos/38375326/pexels-photo-38375326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "bot_analytics_chart": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "sections_breakdown": [
+    {
+      "section": "Sticky Navbar",
+      "component_name": "Navbar",
+      "details": "Brand logo avatar with spiky hair + 'TTB KING' text with electric blue accent tag, smooth navigation anchor links (#features, #stats, #how-it-works, #testimonials, #faq), and a glowing 'Join Telegram' CTA button linking to https://t.me/+ZRXVYah_r0c5ZGU1 with data-testid='nav-telegram-btn'."
+    },
+    {
+      "section": "Hero Section",
+      "component_name": "Hero",
+      "details": "Kinetic line reveal headline: 'Master Binary Trading with Real-Time Precision'. Subtitle highlighting daily market insights, 85%+ win rate signals, and 100% free mentorship. Floating avatar halo with pulsing cyan ring, stats counter teaser, and double CTA ('Join Free Telegram' + 'Explore Features')."
+    },
+    {
+      "section": "Stats Counters",
+      "component_name": "StatsBar",
+      "details": "Key metrics block with animated counters: 15,000+ Active Traders, 85%+ Verified Win Rate, 100+ Daily Signals, $0 Joining Fee (100% Free)."
+    },
+    {
+      "section": "Features Grid",
+      "component_name": "FeaturesGrid",
+      "details": "Bento style grid showcasing 5 core pillars: 1. Exact Call / Put Signals (1m, 3m, 5m expiry), 2. Advance AI Bot Signals (24/7 scanning), 3. Risk & Capital Management Matrix, 4. Free Mentorship & Setup Guides, 5. Live Stream Trading Sessions."
+    },
+    {
+      "section": "How It Works",
+      "component_name": "HowItWorks",
+      "details": "3-Step manifesto chapter style workflow: Step 01: Click Telegram Link -> Step 02: Receive Real-Time Market Signals & Analysis -> Step 03: Execute Trades & Scale Account Safely."
+    },
+    {
+      "section": "Testimonials & Proof",
+      "component_name": "Testimonials",
+      "details": "Slow editorial marquee + card grid displaying real member results, feedback, rating badges (4.9/5 stars), and trade profit proofs."
+    },
+    {
+      "section": "FAQ Accordion",
+      "component_name": "FAQAccordion",
+      "details": "Interactive Shadcn/Radix Accordion answering top binary trading questions: Is it free? Beginner friendly? Capital requirements? How signals work?"
+    },
+    {
+      "section": "Final CTA Band",
+      "component_name": "FinalCTA",
+      "details": "High-contrast glowing CTA banner with large bold headline: 'Your Next Profitable Trade Starts in Telegram', glowing primary button, and zero risk guarantees."
+    },
+    {
+      "section": "Footer",
+      "component_name": "Footer",
+      "details": "TTB KING logo branding, Telegram shortcut link, copyright 2026, and full binary trading risk disclaimer statement."
+    }
+  ],
+  "testing_guidelines": {
+    "rule": "Every button, link, accordion header, modal toggle, and key metric container MUST include data-testid in kebab-case format.",
+    "examples": [
+      "data-testid='nav-telegram-btn'",
+      "data-testid='hero-join-telegram-btn'",
+      "data-testid='feature-card-signals'",
+      "data-testid='faq-accordion-item-0'",
+      "data-testid='footer-telegram-link'"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use JavaScript (.js) component syntax (not TypeScript .tsx).",
+    "Import Outfit & Plus Jakarta Sans via HTML <link> or @import in index.css.",
+    "Ensure header/navbar has backdrop-blur-xl and non-transparent dark background (bg-[#030712]/85).",
+    "Implement smooth scrolling using Lenis or Framer Motion scroll listeners.",
+    "All Telegram buttons must point to 'https://t.me/+ZRXVYah_r0c5ZGU1' and open in target='_blank' rel='noopener noreferrer'.",
+    "Ensure mobile responsiveness with hamburger menu or floating CTA bar on small screens."
+  ]
+}
