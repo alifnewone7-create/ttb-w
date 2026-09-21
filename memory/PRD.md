@@ -12,7 +12,7 @@ Build a landing page: Name TTB KING; Theme Blue & Black (gradient colour grading
 - React (CRA/craco) + Tailwind + shadcn Accordion + framer-motion + lenis (smooth scroll)
 - Frontend-only landing page; FastAPI/Mongo template backend untouched
 - Design tokens: `/app/design_guidelines.json`, CSS in `/app/frontend/src/index.css`
-- Fonts: Sora 800 ALL-CAPS (display), Manrope (body); Phosphor Icons; original Telegram icon for CTAs
+- Fonts: Plus Jakarta Sans (800 ALL-CAPS display, 400-600 body); hero grid texture removed; Phosphor Icons; original Telegram icon for CTAs
 - Design rule: Blue & indigo on blue-black gradient theme (#070b1f base, #2563eb→#4f46e5 gradients), everything centered, no side-aligned content, NO smooth-scroll/parallax (Lenis removed per user)
 - Files: `src/pages/Landing.js`, `src/components/landing/*`, `src/lib/site.js` (all copy + links), `src/hooks/useLenis.js`
 - Assets: `public/og-image.png`, `favicon.ico/png`, `logo192/512.png`

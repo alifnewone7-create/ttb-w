@@ -66,8 +66,8 @@
         margin: 0;
         background-color: #faf8f2; /* Midnight Sapphire base — aura layers multiply against this */
         color: var(--ink);
-        font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
-        letter-spacing: 0.005em;
+        font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: 0.012em;
         line-height: 1.55;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -90,10 +90,10 @@
     .ink { color: var(--ink); }
 
     h1, h2, h3, h4, .font-display {
-        font-family: "Sora", ui-sans-serif, sans-serif;
+        font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.01em;
     }
 
     ::selection {

@@ -12,7 +12,6 @@ const fade = (delay) => ({
 
 export const Hero = () => (
   <section id="top" className="zone-light relative overflow-hidden pt-[112px] pb-16 sm:pt-[128px] sm:pb-20 lg:pt-[140px] lg:pb-24" data-testid="hero-section">
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(20,25,60,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(20,25,60,0.06)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,#000_30%,transparent_100%)]" />
 
     <div className="relative mx-auto flex w-full max-w-[920px] flex-col items-center px-5 text-center sm:px-8">
       <motion.div
