@@ -23,7 +23,7 @@ export const Hero = () => {
 
   return (
     <section ref={ref} id="top" className="relative min-h-[100svh] overflow-hidden pt-28 pb-20 lg:pt-36" data-testid="hero-section">
-      <div className="grid-bg absolute inset-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(37,99,235,0.35),transparent_70%)]" />
       <motion.div style={{ y: orbY }} className="orb left-[-10%] top-[-10%] h-[520px] w-[520px] bg-blue-700/30" />
       <motion.div style={{ y: orbY2 }} className="orb right-[-15%] top-[20%] h-[560px] w-[560px] bg-cyan-500/20" />
       <div className="orb left-[40%] bottom-[-30%] h-[500px] w-[500px] bg-blue-900/40" />

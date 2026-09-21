@@ -48,6 +48,8 @@
     body {
         margin: 0;
         background-color: var(--bg);
+        background-image: linear-gradient(180deg, #030712 0%, #071433 28%, #04102a 55%, #0a1f4d 78%, #030712 100%);
+        background-attachment: scroll;
         color: var(--ink);
         font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -90,7 +92,7 @@
     }
 
     .btn-primary {
-        @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-semibold text-white transition-[transform,box-shadow] duration-300 will-change-transform;
+        @apply relative inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white transition-[transform,box-shadow] duration-300 will-change-transform;
         background-image: linear-gradient(92deg, #2563eb 0%, #0ea5e9 55%, #00f0ff 130%);
         box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35) inset, 0 10px 40px -10px rgba(37, 99, 235, 0.75);
     }
@@ -101,9 +103,9 @@
     .btn-primary:active { transform: translateY(0) scale(0.98); }
 
     .btn-ghost {
-        @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-semibold text-slate-200 transition-[background-color,border-color,transform] duration-300;
-        background: rgba(15, 23, 42, 0.6);
-        border: 1px solid rgba(148, 163, 184, 0.2);
+        @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-slate-200 transition-[background-color,border-color,transform] duration-300;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(15, 23, 42, 0.6));
+        border: 1px solid rgba(56, 189, 248, 0.25);
     }
     .btn-ghost:hover {
         background: rgba(30, 41, 59, 0.8);

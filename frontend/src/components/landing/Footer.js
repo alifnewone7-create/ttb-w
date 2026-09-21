@@ -2,7 +2,7 @@ import { Send } from "lucide-react";
 import { BRAND, LOGO, NAV_LINKS, TELEGRAM_URL } from "@/lib/site";
 
 export const Footer = () => (
-  <footer className="relative border-t border-cyan-500/10 bg-[#020610]" data-testid="footer">
+  <footer className="relative border-t border-cyan-500/10 bg-gradient-to-b from-[#020610] to-[#04102a]" data-testid="footer">
     <div className="mx-auto max-w-7xl px-5 sm:px-8 py-14">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
         <div className="md:col-span-5">

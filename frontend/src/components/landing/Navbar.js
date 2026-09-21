@@ -53,7 +53,7 @@ export const Navbar = () => {
             <Send className="h-4 w-4" /> Join Telegram
           </a>
           <button
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full glass text-white"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl glass text-white"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             data-testid="nav-menu-toggle"

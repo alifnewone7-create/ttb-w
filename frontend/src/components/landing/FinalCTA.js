@@ -10,7 +10,6 @@ export const FinalCTA = () => (
     <Reveal className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-cyan-400/20 p-8 sm:p-14 lg:p-20" style={{ background: "linear-gradient(135deg, #0b1a3d 0%, #0a2a5e 45%, #04121f 100%)" }}>
       <div className="orb -right-24 -top-24 h-[420px] w-[420px] bg-cyan-400/30" />
       <div className="orb -left-24 -bottom-24 h-[380px] w-[380px] bg-blue-600/40" />
-      <div className="grid-bg absolute inset-0 opacity-70" />
 
       <div className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
         <div className="lg:col-span-8">

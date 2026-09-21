@@ -3,7 +3,7 @@ import { Reveal, SectionHead } from "./Reveal";
 import { STEPS, TELEGRAM_URL } from "@/lib/site";
 
 export const HowItWorks = () => (
-  <section id="how-it-works" className="relative py-24 sm:py-32 bg-[#050b18]/60 border-y border-cyan-500/10" data-testid="how-it-works-section">
+  <section id="how-it-works" className="relative py-24 sm:py-32 bg-gradient-to-b from-[#050b18]/70 via-[#071a3a]/50 to-[#050b18]/70 border-y border-cyan-500/10" data-testid="how-it-works-section">
     <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 sm:px-8 lg:grid-cols-12">
       <div className="lg:col-span-5">
         <div className="lg:sticky lg:top-32">
