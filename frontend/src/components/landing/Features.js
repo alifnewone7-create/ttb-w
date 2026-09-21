@@ -21,7 +21,7 @@ const Card = ({ f, i }) => {
       <motion.article
         whileHover={{ y: -6 }}
         transition={{ type: "spring", stiffness: 260, damping: 22 }}
-        className="panel relative flex h-full flex-col items-center overflow-hidden border border-blue-200/15 p-8 text-center shadow-[0_24px_60px_-30px_rgba(37,99,235,0.6)] sm:p-10"
+        className="zone-dark panel relative flex h-full flex-col items-center overflow-hidden border border-white/10 p-8 text-center shadow-[0_28px_60px_-30px_rgba(20,25,60,0.6)] sm:p-10"
         style={{ background: SKINS[f.id] }}
         data-testid={`feature-card-${f.id}`}
       >
@@ -64,8 +64,7 @@ const Card = ({ f, i }) => {
 };
 
 export const Features = () => (
-  <section id="features" className="relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="features-section">
-    <div className="glow glow-purple left-[-15%] top-[10%] h-[500px] w-[500px]" />
+  <section id="features" className="zone-light relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="features-section">
     <div className="relative mx-auto max-w-[1200px] px-5 sm:px-8">
       <SectionHead
         id="features"

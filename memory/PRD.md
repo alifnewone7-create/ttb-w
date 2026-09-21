@@ -32,7 +32,7 @@ Build a landing page: Name TTB KING; Theme Blue & Black (gradient colour grading
 - Footer: fully centered (brand, CTA, links, disclaimer)
 - Sticky navbar w/ mobile menu, mobile sticky Join CTA
 - Testing: iteration_3.json — 100% pass desktop 1920 + mobile 390
-- Rev 2 (same day): font → Sora/Manrope; palette → blue & indigo on blue-black (pink/purple removed); Lenis smooth scroll + hero parallax removed; header→hero gap reduced (pt-112/128/140px); all cards gradient w/ blue glow shadow; subtle grid texture in hero
+- Rev 3: "Midnight Sapphire" aura background (user-provided spec): body #faf8f2, two absolute multiply-blend linear-gradient layers (blur 90/130px) over whole page in `Landing.js`; content in z-1 wrapper. Page is light cream at top → deep sapphire at bottom. Zone tokens `.zone-light` / `.zone-dark` (--ink, --ink-soft, --eyebrow) set text colour per section: Hero/Features/Stats = dark ink; HowItWorks/Testimonials/FAQ/CTA/Footer = white. Cards (`.card-grad`) are solid sapphire w/ white text. Navbar cream when scrolled. Glow blobs + page-bg removed.
 
 ## Backlog
 - P1: Real member proof screenshots in testimonials (user to provide)

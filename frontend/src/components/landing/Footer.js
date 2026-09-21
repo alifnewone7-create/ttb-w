@@ -2,7 +2,7 @@ import { TelegramIcon } from "./TelegramIcon";
 import { BRAND, LOGO, NAV_LINKS, TELEGRAM_URL } from "@/lib/site";
 
 export const Footer = () => (
-  <footer className="relative bg-[#03050f]" data-testid="footer">
+  <footer className="zone-dark relative bg-[#0b0e2a]" data-testid="footer">
     <div className="mx-auto flex max-w-[1200px] flex-col items-center px-5 sm:px-8 py-16 text-center">
       <a href="#top" className="flex items-center gap-3" data-testid="footer-logo-link">
         <span className="h-11 w-11 overflow-hidden rounded-full">

@@ -3,8 +3,7 @@ import { Reveal, SectionHead } from "./Reveal";
 import { FAQS } from "@/lib/site";
 
 export const FAQ = () => (
-  <section id="faq" className="relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="faq-section">
-    <div className="glow glow-purple right-[-15%] top-[30%] h-[460px] w-[460px]" />
+  <section id="faq" className="zone-dark relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="faq-section">
     <div className="relative mx-auto flex max-w-[1200px] flex-col items-center px-5 sm:px-8">
       <SectionHead
         id="faq"

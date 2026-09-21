@@ -3,12 +3,11 @@ import { TelegramIcon } from "./TelegramIcon";
 import { STEPS, TELEGRAM_URL } from "@/lib/site";
 
 export const HowItWorks = () => (
-  <section id="how-it-works" className="relative px-5 sm:px-8 py-10 sm:py-16" data-testid="how-it-works-section">
+  <section id="how-it-works" className="zone-dark relative px-5 sm:px-8 py-10 sm:py-16" data-testid="how-it-works-section">
     <div
-      className="relative mx-auto max-w-[1200px] panel overflow-hidden border border-white/10 px-6 py-14 sm:px-12 sm:py-16 lg:px-16 lg:py-20"
+      className="relative mx-auto max-w-[1200px] panel overflow-hidden border border-white/10 shadow-[0_30px_80px_-40px_rgba(20,25,60,0.7)] px-6 py-14 sm:px-12 sm:py-16 lg:px-16 lg:py-20"
       style={{ background: "var(--grad-panel)" }}
     >
-      <div className="glow glow-pink right-[-10%] top-[-20%] h-[400px] w-[400px]" />
       <div className="relative flex flex-col items-center">
         <SectionHead
           id="how-it-works"

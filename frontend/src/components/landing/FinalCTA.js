@@ -7,12 +7,11 @@ import { LOGO, TELEGRAM_URL } from "@/lib/site";
 const PERKS = ["Join free, no cost", "50 - 100 signals every day", "Free mentorship & live sessions"];
 
 export const FinalCTA = () => (
-  <section className="relative px-5 sm:px-8 py-10 sm:py-16" data-testid="final-cta-section">
+  <section className="zone-dark relative px-5 sm:px-8 py-10 sm:py-16" data-testid="final-cta-section">
     <Reveal
       className="panel relative mx-auto max-w-[1200px] overflow-hidden border border-white/10 px-6 py-14 sm:px-12 sm:py-16 lg:px-16 lg:py-20"
       style={{ background: "linear-gradient(135deg, #0b1a4d 0%, #1e40af 40%, #2563eb 70%, #4f46e5 100%)" }}
     >
-      <div className="glow left-1/2 top-[-30%] h-[400px] w-[400px] -translate-x-1/2 bg-white/20" />
       <div className="relative flex flex-col items-center text-center">
         <motion.div
           className="float-slow"

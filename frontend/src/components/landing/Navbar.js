@@ -20,8 +20,8 @@ export const Navbar = () => {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color] duration-500 ${
-        scrolled ? "bg-[#070b1f]/92 backdrop-blur-xl" : "bg-transparent"
+      className={`zone-light fixed inset-x-0 top-0 z-50 transition-[background-color] duration-500 ${
+        scrolled ? "bg-[#faf8f2]/90 backdrop-blur-xl shadow-[0_1px_0_rgba(20,25,60,0.08)]" : "bg-transparent"
       }`}
       data-testid="navbar"
     >
@@ -30,7 +30,7 @@ export const Navbar = () => {
           <span className="h-10 w-10 overflow-hidden rounded-full">
             <img src={LOGO} alt={`${BRAND} logo`} className="h-full w-full object-cover" />
           </span>
-          <span className="font-display text-lg font-extrabold text-white">TTB KING</span>
+          <span className="font-display text-lg font-extrabold ink">TTB KING</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-7">
@@ -38,7 +38,7 @@ export const Navbar = () => {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-base font-medium text-white/90 hover:text-white transition-colors duration-200"
+                className="text-base font-medium ink opacity-80 hover:opacity-100 transition-opacity duration-200"
                 data-testid={`nav-link-${l.label.toLowerCase()}`}
               >
                 {l.label}
@@ -52,13 +52,13 @@ export const Navbar = () => {
             href={TELEGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-white hidden sm:inline-flex !py-2.5 !px-4 !rounded-2xl !text-[15px]"
+            className="btn-blurple hidden sm:inline-flex !py-2.5 !px-4 !rounded-2xl !text-[15px]"
             data-testid="nav-telegram-btn"
           >
             <TelegramIcon className="h-[18px] w-[18px]" /> Join Telegram
           </a>
           <button
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#14193c]/10 ink"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             data-testid="nav-menu-toggle"
@@ -75,7 +75,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#070b1f]/98 backdrop-blur-xl"
+            className="md:hidden bg-[#faf8f2]/98 backdrop-blur-xl"
             data-testid="nav-mobile-menu"
           >
             <ul className="flex flex-col px-6 py-4">
@@ -84,7 +84,7 @@ export const Navbar = () => {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block py-3 text-base font-medium text-white border-b border-white/10"
+                    className="block py-3 text-base font-medium ink border-b border-[#14193c]/10"
                     data-testid={`nav-mobile-link-${l.label.toLowerCase()}`}
                   >
                     {l.label}

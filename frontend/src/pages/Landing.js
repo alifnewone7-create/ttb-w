@@ -12,19 +12,22 @@ import { MobileCTA } from "@/components/landing/MobileCTA";
 
 export default function Landing() {
   return (
-    <main className="relative overflow-x-clip" data-testid="landing-page">
-      <div className="page-bg" />
-      <Navbar />
-      <Hero />
-      <Marquee />
-      <Features />
-      <StatsBar />
-      <HowItWorks />
-      <Testimonials />
-      <FAQ />
-      <FinalCTA />
-      <Footer />
-      <MobileCTA />
+    <main className="relative min-h-screen overflow-hidden" data-testid="landing-page">
+      <div className="aura-layer aura-layer-1" aria-hidden="true" />
+      <div className="aura-layer aura-layer-2" aria-hidden="true" />
+      <div className="relative z-[1]">
+        <Navbar />
+        <Hero />
+        <Marquee />
+        <Features />
+        <StatsBar />
+        <HowItWorks />
+        <Testimonials />
+        <FAQ />
+        <FinalCTA />
+        <Footer />
+        <MobileCTA />
+      </div>
     </main>
   );
 }

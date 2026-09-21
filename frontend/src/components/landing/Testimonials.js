@@ -36,12 +36,11 @@ const Card = ({ t, i }) => (
 );
 
 export const Testimonials = () => (
-  <section id="testimonials" className="relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="testimonials-section">
-    <div className="glow glow-blurple left-1/2 top-[20%] h-[500px] w-[700px] -translate-x-1/2" />
+  <section id="testimonials" className="zone-dark relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="testimonials-section">
     <div className="relative mx-auto flex max-w-[1200px] flex-col items-center px-5 sm:px-8">
       <SectionHead id="testimonials" eyebrow="Community" title={<>Real traders, real discipline</>} />
       <Reveal delay={0.2} className="mt-8 flex items-center gap-4" data-testid="testimonials-rating">
-        <span className="font-display text-4xl font-extrabold text-white">4.9</span>
+        <span className="font-display text-4xl font-extrabold ink">4.9</span>
         <div>
           <Stars size={16} />
           <p className="mt-1 text-xs normal-case fog">avg member rating</p>
@@ -50,8 +49,6 @@ export const Testimonials = () => (
     </div>
 
     <div className="marquee relative mt-14" style={{ "--speed": "70s" }} data-testid="testimonials-marquee">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-32 bg-gradient-to-r from-[#070b1f] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-32 bg-gradient-to-l from-[#070b1f] to-transparent" />
       <div className="marquee-track gap-5 px-5">
         {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
           <Card key={i} t={t} i={i} />

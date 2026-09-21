@@ -64,8 +64,8 @@
 
     body {
         margin: 0;
-        background-color: var(--page);
-        color: var(--snow);
+        background-color: #faf8f2; /* Midnight Sapphire base — aura layers multiply against this */
+        color: var(--ink);
         font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
         letter-spacing: 0.005em;
         line-height: 1.55;
@@ -73,6 +73,21 @@
         -moz-osx-font-smoothing: grayscale;
         overflow-x: clip;
     }
+
+    /* Zone tokens — top of the aura is light, bottom is deep sapphire */
+    :root, .zone-light {
+        --ink: #14193c;
+        --ink-rgb: 20, 25, 60;
+        --ink-soft: #454c7a;
+        --eyebrow: #3d5aff;
+    }
+    .zone-dark, .card-grad {
+        --ink: #ffffff;
+        --ink-rgb: 255, 255, 255;
+        --ink-soft: #b4bbdc;
+        --eyebrow: #93c5fd;
+    }
+    .ink { color: var(--ink); }
 
     h1, h2, h3, h4, .font-display {
         font-family: "Sora", ui-sans-serif, sans-serif;
@@ -82,16 +97,16 @@
     }
 
     ::selection {
-        background: rgba(37, 99, 235, 0.5);
+        background: rgba(61, 90, 255, 0.35);
         color: #fff;
     }
 
     ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #04061a; }
+    ::-webkit-scrollbar-track { background: #e9e6dd; }
     ::-webkit-scrollbar-thumb {
-        background: #2563eb;
+        background: #3d5aff;
         border-radius: 104px;
-        border: 3px solid #04061a;
+        border: 3px solid #e9e6dd;
     }
 }
 
@@ -109,12 +124,12 @@
     .btn-blurple:hover { background-image: var(--grad-btn-hover); transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(59, 130, 246, 0.75); }
     .btn-blurple:active { transform: scale(0.985); }
 
-    /* Gradient card — glassy blue tint on blue-black */
+    /* Solid sapphire card — always dark, white text (zone-dark tokens applied) */
     .card-grad {
-        background-image: var(--grad-card);
-        border: 1px solid rgba(147, 197, 253, 0.14);
+        background-image: linear-gradient(160deg, #1f2f7a 0%, #161d4f 55%, #0f1238 100%);
+        border: 1px solid rgba(147, 197, 253, 0.2);
         border-radius: 20px;
-        box-shadow: 0 20px 50px -30px rgba(37, 99, 235, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        box-shadow: 0 24px 50px -28px rgba(20, 25, 60, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
     .grad-text {
         background-image: linear-gradient(90deg, #60a5fa 0%, #818cf8 50%, #a5b4fc 100%);
@@ -122,51 +137,48 @@
         background-clip: text;
         color: transparent;
     }
-    .glow-blurple { background-image: var(--grad-glow-blurple); }
-    .glow-purple { background-image: var(--grad-glow-purple); }
-    .glow-pink { background-image: var(--grad-glow-pink); }
+    .grad-text-deep {
+        background-image: linear-gradient(90deg, #1d4ed8 0%, #3d5aff 50%, #4f46e5 100%);
+    }
 
     /* Secondary CTA — white filled */
     .btn-white {
         @apply inline-flex items-center justify-center gap-2.5 font-medium transition-[background-color,transform] duration-200;
         background-color: var(--snow);
-        color: var(--chrome);
+        color: #14193c;
         border-radius: 12px;
         padding: 15px 24px;
         font-size: 16px;
         letter-spacing: 0.016em;
+        box-shadow: 0 10px 30px -14px rgba(20, 25, 60, 0.35);
     }
-    .btn-white:hover { background-color: #e8e9f5; }
+    .btn-white:hover { background-color: #eef0fb; }
     .btn-white:active { transform: scale(0.985); }
 
-    /* Ghost nav button — transparent, white outline */
+    /* Ghost button — outline in current zone ink */
     .btn-ghost {
-        @apply inline-flex items-center justify-center gap-2 font-medium text-white transition-[background-color,border-color] duration-200;
+        @apply inline-flex items-center justify-center gap-2 font-medium transition-[background-color,border-color] duration-200;
+        color: var(--ink);
         background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.7);
+        border: 1.5px solid rgba(var(--ink-rgb), 0.35);
         border-radius: 12px;
         padding: 10px 16px;
         font-size: 16px;
         letter-spacing: 0.016em;
     }
-    .btn-ghost:hover { background-color: rgba(255, 255, 255, 0.1); border-color: #fff; }
+    .btn-ghost:hover { background-color: rgba(var(--ink-rgb), 0.08); border-color: rgba(var(--ink-rgb), 0.7); }
 
     .btn-blurple svg, .btn-white svg, .btn-ghost svg { flex-shrink: 0; }
 
     .panel { border-radius: 24px; }
-    .card-chrome {
-        background-color: var(--chrome);
-        border-radius: 16px;
-    }
-    .surface { background-color: var(--surface); }
 
     .eyebrow {
         @apply text-xs font-semibold uppercase;
         letter-spacing: 0.18em;
-        color: #93c5fd;
+        color: var(--eyebrow);
     }
 
-    .fog { color: var(--fog); }
+    .fog { color: var(--ink-soft); }
 
     .marquee-track {
         display: flex;
@@ -175,30 +187,29 @@
     }
     .marquee:hover .marquee-track { animation-play-state: paused; }
 
-    .line-mask {
-        display: block;
-        overflow: hidden;
-        padding-bottom: 0.08em;
-        margin-bottom: -0.08em;
-    }
-
     .num-stamp {
         -webkit-text-stroke: 1.5px rgba(186, 188, 217, 0.4);
         color: transparent;
     }
 
-    .glow {
-        @apply pointer-events-none absolute rounded-full;
-        filter: blur(80px);
+    /* Midnight Sapphire aura — layers multiply against body #faf8f2 */
+    .aura-layer {
+        position: absolute;
+        inset: 0;
+        mix-blend-mode: multiply;
+        filter: blur(90px);
+        transform: translateZ(0);
+        will-change: transform;
+        pointer-events: none;
     }
-    .page-bg {
-        @apply pointer-events-none fixed inset-0 -z-10;
-        background:
-            radial-gradient(60% 45% at 50% -5%, rgba(37, 99, 235, 0.42), transparent 70%),
-            radial-gradient(40% 35% at 90% 30%, rgba(79, 70, 229, 0.22), transparent 70%),
-            radial-gradient(45% 35% at 5% 65%, rgba(37, 99, 235, 0.18), transparent 70%),
-            radial-gradient(50% 40% at 50% 100%, rgba(79, 70, 229, 0.28), transparent 70%),
-            linear-gradient(180deg, #0a1233 0%, #070b1f 50%, #03050f 100%);
+    .aura-layer-1 {
+        background: linear-gradient(rgba(0,0,0,0) 0%, rgba(61,90,255,0.12) 28%, rgb(255,255,255) 18%, rgb(45,55,135) 68%, rgb(20,25,60) 100%);
+    }
+    .aura-layer-2 {
+        background: linear-gradient(rgba(0,0,0,0) 0%, rgba(61,90,255,0.22) 34%, rgb(255,255,255) 66%, rgb(45,55,135) 82%, rgb(20,25,60) 100%);
+    }
+    @media (min-width: 768px) {
+        .aura-layer { filter: blur(130px); }
     }
 }
 

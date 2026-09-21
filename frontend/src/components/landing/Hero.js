@@ -11,36 +11,32 @@ const fade = (delay) => ({
 });
 
 export const Hero = () => (
-  <section id="top" className="relative overflow-hidden pt-[112px] pb-16 sm:pt-[128px] sm:pb-20 lg:pt-[140px] lg:pb-24" data-testid="hero-section">
-    <div className="absolute inset-0 bg-[linear-gradient(180deg,#0f1f5c_0%,#0a1233_40%,transparent_100%)]" />
-    <div className="glow glow-blurple left-1/2 top-[-20%] h-[640px] w-[640px] -translate-x-1/2" />
-    <div className="glow glow-purple left-[-10%] top-[30%] h-[420px] w-[420px]" />
-    <div className="glow glow-pink right-[-10%] top-[30%] h-[420px] w-[420px]" />
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,#000_30%,transparent_100%)]" />
+  <section id="top" className="zone-light relative overflow-hidden pt-[112px] pb-16 sm:pt-[128px] sm:pb-20 lg:pt-[140px] lg:pb-24" data-testid="hero-section">
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(20,25,60,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(20,25,60,0.06)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,#000_30%,transparent_100%)]" />
 
     <div className="relative mx-auto flex w-full max-w-[920px] flex-col items-center px-5 text-center sm:px-8">
       <motion.div
         {...fade(0.1)}
-        className="inline-flex items-center gap-2.5 rounded-[104px] border border-blue-300/20 bg-blue-500/10 px-4 py-2"
+        className="inline-flex items-center gap-2.5 rounded-[104px] border border-[#3d5aff]/25 bg-[#3d5aff]/10 px-4 py-2"
         data-testid="hero-badge"
       >
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#57f287] opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-[#57f287]" />
         </span>
-        <span className="text-[13px] font-semibold tracking-[0.04em] text-blue-100">Live · Free Telegram community</span>
+        <span className="text-[13px] font-semibold tracking-[0.04em] ink">Live · Free Telegram community</span>
       </motion.div>
 
       <motion.h1
         {...fade(0.2)}
-        className="mt-7 text-[2.25rem] sm:text-[3.4rem] lg:text-[4.25rem] xl:text-[4.75rem] font-extrabold leading-[1.02] text-white"
+        className="mt-7 text-[2.25rem] sm:text-[3.4rem] lg:text-[4.25rem] xl:text-[4.75rem] font-extrabold leading-[1.02] ink"
         data-testid="hero-title"
       >
         Learn to trade
         <br />
         binary markets
         <br />
-        <span className="grad-text">with the king</span>
+        <span className="grad-text grad-text-deep">with the king</span>
       </motion.h1>
 
       <motion.p
@@ -62,7 +58,7 @@ export const Hero = () => (
         >
           <TelegramIcon className="h-5 w-5" /> Join Free Telegram Channel
         </a>
-        <a href="#features" className="btn-white w-full sm:w-auto" data-testid="hero-explore-btn">
+        <a href="#features" className="btn-ghost w-full sm:w-auto !py-[16px] !px-6" data-testid="hero-explore-btn">
           Explore the channel
         </a>
       </motion.div>
@@ -78,7 +74,7 @@ export const Hero = () => (
           [ShieldCheck, "Risk-first mentorship"],
         ].map(([Icon, t]) => (
           <li key={t} className="flex items-center gap-2.5">
-            <Icon size={22} weight="duotone" className="text-blue-300" /> {t}
+            <Icon size={22} weight="duotone" className="text-[#3d5aff]" /> {t}
           </li>
         ))}
       </motion.ul>

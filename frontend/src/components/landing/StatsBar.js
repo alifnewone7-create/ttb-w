@@ -28,8 +28,7 @@ const Counter = ({ value, prefix = "", suffix = "" }) => {
 };
 
 export const StatsBar = () => (
-  <section id="stats" className="relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="stats-section">
-    <div className="glow glow-pink right-[-10%] top-[0%] h-[460px] w-[460px]" />
+  <section id="stats" className="zone-light relative overflow-hidden py-24 sm:py-28 lg:py-[112px]" data-testid="stats-section">
     <div className="relative mx-auto max-w-[1200px] px-5 sm:px-8">
       <SectionHead id="stats" eyebrow="Track record" title={<>Numbers that come from discipline, not luck</>} />
       <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
