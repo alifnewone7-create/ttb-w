@@ -4,7 +4,7 @@ import Landing from "@/pages/Landing";
 
 function App() {
   return (
-    <div className="App grain">
+    <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />

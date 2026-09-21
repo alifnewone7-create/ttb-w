@@ -23,8 +23,8 @@ export const MaskedLines = ({ lines, className = "", delay = 0, stagger = 0.12, 
         <span className="line-mask" key={i}>
           <motion.span
             className="block"
-            initial={{ y: "115%", rotate: 2 }}
-            animate={{ y: "0%", rotate: 0 }}
+            initial={{ y: "115%" }}
+            animate={{ y: "0%" }}
             transition={{ duration: 1.1, delay: delay + i * stagger, ease: EASE }}
           >
             {line}
@@ -41,13 +41,16 @@ export const SectionHead = ({ eyebrow, title, body, align = "left", id }) => (
       <p className="eyebrow" data-testid={id ? `${id}-eyebrow` : undefined}>{eyebrow}</p>
     </Reveal>
     <Reveal delay={0.08}>
-      <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.05] text-white" data-testid={id ? `${id}-title` : undefined}>
+      <h2
+        className="mt-5 text-[2rem] sm:text-4xl lg:text-[3rem] font-extrabold leading-[0.95] text-white"
+        data-testid={id ? `${id}-title` : undefined}
+      >
         {title}
       </h2>
     </Reveal>
     {body && (
       <Reveal delay={0.16}>
-        <p className="mt-5 text-base md:text-lg text-slate-400 leading-relaxed">{body}</p>
+        <p className="mt-6 text-base md:text-lg fog leading-relaxed normal-case">{body}</p>
       </Reveal>
     )}
   </div>
