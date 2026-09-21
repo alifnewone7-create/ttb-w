@@ -21,6 +21,15 @@
         --snow: #ffffff;
         --dim-grey: #50555f;
 
+        /* Gradients — Discord 2024 homepage feel */
+        --grad-btn: linear-gradient(135deg, #5865f2 0%, #7b5cff 55%, #a23bf5 100%);
+        --grad-btn-hover: linear-gradient(135deg, #6a76f5 0%, #8d72ff 55%, #b455f7 100%);
+        --grad-card: linear-gradient(160deg, rgba(88, 101, 242, 0.26) 0%, rgba(123, 92, 255, 0.12) 40%, rgba(16, 18, 52, 0.95) 100%);
+        --grad-panel: linear-gradient(135deg, #2a2f8a 0%, #4b3bb5 45%, #8a2fb8 100%);
+        --grad-glow-pink: radial-gradient(circle, rgba(235, 69, 158, 0.55), transparent 65%);
+        --grad-glow-blurple: radial-gradient(circle, rgba(88, 101, 242, 0.6), transparent 65%);
+        --grad-glow-purple: radial-gradient(circle, rgba(162, 59, 245, 0.5), transparent 65%);
+
         /* shadcn */
         --background: 238 53% 12%;
         --foreground: 0 0% 100%;
@@ -92,17 +101,36 @@
 }
 
 @layer components {
-    /* Primary CTA — Blurple filled, the only saturated element in page chrome */
+    /* Primary CTA — Blurple → purple gradient */
     .btn-blurple {
-        @apply inline-flex items-center justify-center gap-2.5 font-medium text-white transition-[background-color,transform] duration-200;
-        background-color: var(--blurple);
+        @apply relative inline-flex items-center justify-center gap-2.5 font-medium text-white transition-[transform,box-shadow] duration-200;
+        background-image: var(--grad-btn);
         border-radius: 12px;
         padding: 18px 24px;
         font-size: 16px;
         letter-spacing: 0.016em;
+        box-shadow: 0 10px 30px -10px rgba(123, 92, 255, 0.6);
     }
-    .btn-blurple:hover { background-color: var(--dark-blurple); }
+    .btn-blurple:hover { background-image: var(--grad-btn-hover); transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(123, 92, 255, 0.75); }
     .btn-blurple:active { transform: scale(0.985); }
+
+    /* Gradient card — glassy blurple tint on deep indigo */
+    .card-grad {
+        background-image: var(--grad-card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    .grad-text {
+        background-image: linear-gradient(90deg, #8891f2 0%, #c084fc 50%, #f472b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .glow-blurple { background-image: var(--grad-glow-blurple); }
+    .glow-purple { background-image: var(--grad-glow-purple); }
+    .glow-pink { background-image: var(--grad-glow-pink); }
 
     /* Secondary CTA — white filled */
     .btn-white {
@@ -167,7 +195,16 @@
 
     .glow {
         @apply pointer-events-none absolute rounded-full;
-        filter: blur(120px);
+        filter: blur(80px);
+    }
+    .page-bg {
+        @apply pointer-events-none fixed inset-0 -z-10;
+        background:
+            radial-gradient(60% 45% at 50% -5%, rgba(88, 101, 242, 0.45), transparent 70%),
+            radial-gradient(40% 35% at 85% 25%, rgba(162, 59, 245, 0.22), transparent 70%),
+            radial-gradient(45% 35% at 10% 60%, rgba(235, 69, 158, 0.16), transparent 70%),
+            radial-gradient(50% 40% at 50% 100%, rgba(88, 101, 242, 0.3), transparent 70%),
+            var(--page);
     }
 }
 

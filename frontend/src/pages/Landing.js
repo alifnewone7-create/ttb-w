@@ -15,6 +15,7 @@ export default function Landing() {
   useLenis();
   return (
     <main className="relative overflow-x-clip" data-testid="landing-page">
+      <div className="page-bg" />
       <Navbar />
       <Hero />
       <Marquee />

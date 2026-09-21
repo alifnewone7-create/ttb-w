@@ -35,7 +35,7 @@ export const MaskedLines = ({ lines, className = "", delay = 0, stagger = 0.12, 
   );
 };
 
-export const SectionHead = ({ eyebrow, title, body, align = "left", id }) => (
+export const SectionHead = ({ eyebrow, title, body, align = "center", id }) => (
   <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
     <Reveal>
       <p className="eyebrow" data-testid={id ? `${id}-eyebrow` : undefined}>{eyebrow}</p>
