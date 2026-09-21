@@ -42,7 +42,7 @@ export const SectionHead = ({ eyebrow, title, body, align = "center", id }) => (
     </Reveal>
     <Reveal delay={0.08}>
       <h2
-        className="mt-5 text-[2rem] sm:text-4xl lg:text-[3rem] font-extrabold leading-[0.95] text-white"
+        className="mt-5 text-[2rem] sm:text-4xl lg:text-[3rem] font-extrabold leading-[1.08] text-white"
         data-testid={id ? `${id}-title` : undefined}
       >
         {title}

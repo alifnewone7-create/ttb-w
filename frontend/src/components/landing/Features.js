@@ -7,11 +7,11 @@ import { FEATURES, TELEGRAM_URL } from "@/lib/site";
 const ICONS = { signals: Crosshair, bot: Robot, risk: Scales, mentorship: GraduationCap, live: Broadcast };
 
 const SKINS = {
-  signals: "linear-gradient(135deg, #3442d9 0%, #7b5cff 50%, #a23bf5 100%)",
-  bot: "linear-gradient(160deg, #23277a 0%, #14163a 100%)",
-  risk: "linear-gradient(135deg, #0b6b4f 0%, #1e9e6a 100%)",
-  mentorship: "linear-gradient(135deg, #1e4fa3 0%, #00b0f4 100%)",
-  live: "linear-gradient(135deg, #8b1e5b 0%, #eb459e 100%)",
+  signals: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #4f46e5 100%)",
+  bot: "linear-gradient(160deg, #1e1b4b 0%, #312e81 50%, #0b1030 100%)",
+  risk: "linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #1d4ed8 100%)",
+  mentorship: "linear-gradient(135deg, #1d4ed8 0%, #3b82f6 55%, #0ea5e9 100%)",
+  live: "linear-gradient(135deg, #312e81 0%, #4338ca 50%, #1e40af 100%)",
 };
 
 const Card = ({ f, i }) => {
@@ -21,7 +21,7 @@ const Card = ({ f, i }) => {
       <motion.article
         whileHover={{ y: -6 }}
         transition={{ type: "spring", stiffness: 260, damping: 22 }}
-        className="panel relative flex h-full flex-col items-center overflow-hidden border border-white/10 p-8 text-center sm:p-10"
+        className="panel relative flex h-full flex-col items-center overflow-hidden border border-blue-200/15 p-8 text-center shadow-[0_24px_60px_-30px_rgba(37,99,235,0.6)] sm:p-10"
         style={{ background: SKINS[f.id] }}
         data-testid={`feature-card-${f.id}`}
       >
@@ -30,7 +30,7 @@ const Card = ({ f, i }) => {
           <Icon size={32} weight="duotone" />
         </span>
         <h3
-          className={`mt-7 font-extrabold leading-[0.95] text-white ${
+          className={`mt-7 font-extrabold leading-[1.08] text-white ${
             f.big ? "text-[1.75rem] sm:text-4xl lg:text-[2.75rem]" : "text-xl sm:text-2xl"
           }`}
         >

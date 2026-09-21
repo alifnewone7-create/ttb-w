@@ -50,8 +50,8 @@ export const Testimonials = () => (
     </div>
 
     <div className="marquee relative mt-14" style={{ "--speed": "70s" }} data-testid="testimonials-marquee">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-32 bg-gradient-to-r from-[#0e0f2d] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-32 bg-gradient-to-l from-[#0e0f2d] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-32 bg-gradient-to-r from-[#070b1f] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-32 bg-gradient-to-l from-[#070b1f] to-transparent" />
       <div className="marquee-track gap-5 px-5">
         {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
           <Card key={i} t={t} i={i} />

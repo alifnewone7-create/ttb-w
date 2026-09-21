@@ -13,22 +13,22 @@
         --ember-orange: #fda220;
         --ekko-red: #de2761;
 
-        /* Neutrals */
-        --page: #0e0f2d;
-        --chrome: #23272a;
-        --surface: #2c2f33;
-        --fog: #babcd9;
+        /* Neutrals — blue-black */
+        --page: #070b1f;
+        --chrome: #0f1633;
+        --surface: #141c3f;
+        --fog: #a7b0d1;
         --snow: #ffffff;
         --dim-grey: #50555f;
 
-        /* Gradients — Discord 2024 homepage feel */
-        --grad-btn: linear-gradient(135deg, #5865f2 0%, #7b5cff 55%, #a23bf5 100%);
-        --grad-btn-hover: linear-gradient(135deg, #6a76f5 0%, #8d72ff 55%, #b455f7 100%);
-        --grad-card: linear-gradient(160deg, rgba(88, 101, 242, 0.26) 0%, rgba(123, 92, 255, 0.12) 40%, rgba(16, 18, 52, 0.95) 100%);
-        --grad-panel: linear-gradient(135deg, #2a2f8a 0%, #4b3bb5 45%, #8a2fb8 100%);
-        --grad-glow-pink: radial-gradient(circle, rgba(235, 69, 158, 0.55), transparent 65%);
-        --grad-glow-blurple: radial-gradient(circle, rgba(88, 101, 242, 0.6), transparent 65%);
-        --grad-glow-purple: radial-gradient(circle, rgba(162, 59, 245, 0.5), transparent 65%);
+        /* Gradients — blue & indigo on black */
+        --grad-btn: linear-gradient(135deg, #2563eb 0%, #4f46e5 60%, #6366f1 100%);
+        --grad-btn-hover: linear-gradient(135deg, #3b82f6 0%, #6366f1 60%, #818cf8 100%);
+        --grad-card: linear-gradient(160deg, rgba(59, 130, 246, 0.22) 0%, rgba(79, 70, 229, 0.16) 45%, rgba(7, 11, 31, 0.98) 100%);
+        --grad-panel: linear-gradient(135deg, #0b1a4d 0%, #1e3a8a 50%, #3730a3 100%);
+        --grad-glow-pink: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 65%);
+        --grad-glow-blurple: radial-gradient(circle, rgba(37, 99, 235, 0.55), transparent 65%);
+        --grad-glow-purple: radial-gradient(circle, rgba(79, 70, 229, 0.5), transparent 65%);
 
         /* shadcn */
         --background: 238 53% 12%;
@@ -66,38 +66,33 @@
         margin: 0;
         background-color: var(--page);
         color: var(--snow);
-        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-        letter-spacing: 0.014em;
-        line-height: 1.5;
+        font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: 0.005em;
+        line-height: 1.55;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow-x: clip;
     }
 
     h1, h2, h3, h4, .font-display {
-        font-family: "Nunito", ui-sans-serif, sans-serif;
+        font-family: "Sora", ui-sans-serif, sans-serif;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.02em;
     }
 
     ::selection {
-        background: rgba(88, 101, 242, 0.5);
+        background: rgba(37, 99, 235, 0.5);
         color: #fff;
     }
 
     ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #0a0b22; }
+    ::-webkit-scrollbar-track { background: #04061a; }
     ::-webkit-scrollbar-thumb {
-        background: var(--blurple);
+        background: #2563eb;
         border-radius: 104px;
-        border: 3px solid #0a0b22;
+        border: 3px solid #04061a;
     }
-
-    html.lenis, html.lenis body { height: auto; }
-    .lenis.lenis-smooth { scroll-behavior: auto !important; }
-    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-    .lenis.lenis-stopped { overflow: hidden; }
 }
 
 @layer components {
@@ -109,21 +104,20 @@
         padding: 18px 24px;
         font-size: 16px;
         letter-spacing: 0.016em;
-        box-shadow: 0 10px 30px -10px rgba(123, 92, 255, 0.6);
+        box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.6);
     }
-    .btn-blurple:hover { background-image: var(--grad-btn-hover); transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(123, 92, 255, 0.75); }
+    .btn-blurple:hover { background-image: var(--grad-btn-hover); transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(59, 130, 246, 0.75); }
     .btn-blurple:active { transform: scale(0.985); }
 
-    /* Gradient card — glassy blurple tint on deep indigo */
+    /* Gradient card — glassy blue tint on blue-black */
     .card-grad {
         background-image: var(--grad-card);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(147, 197, 253, 0.14);
         border-radius: 20px;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 20px 50px -30px rgba(37, 99, 235, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
     .grad-text {
-        background-image: linear-gradient(90deg, #8891f2 0%, #c084fc 50%, #f472b6 100%);
+        background-image: linear-gradient(90deg, #60a5fa 0%, #818cf8 50%, #a5b4fc 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -169,7 +163,7 @@
     .eyebrow {
         @apply text-xs font-semibold uppercase;
         letter-spacing: 0.18em;
-        color: var(--fog);
+        color: #93c5fd;
     }
 
     .fog { color: var(--fog); }
@@ -200,11 +194,11 @@
     .page-bg {
         @apply pointer-events-none fixed inset-0 -z-10;
         background:
-            radial-gradient(60% 45% at 50% -5%, rgba(88, 101, 242, 0.45), transparent 70%),
-            radial-gradient(40% 35% at 85% 25%, rgba(162, 59, 245, 0.22), transparent 70%),
-            radial-gradient(45% 35% at 10% 60%, rgba(235, 69, 158, 0.16), transparent 70%),
-            radial-gradient(50% 40% at 50% 100%, rgba(88, 101, 242, 0.3), transparent 70%),
-            var(--page);
+            radial-gradient(60% 45% at 50% -5%, rgba(37, 99, 235, 0.42), transparent 70%),
+            radial-gradient(40% 35% at 90% 30%, rgba(79, 70, 229, 0.22), transparent 70%),
+            radial-gradient(45% 35% at 5% 65%, rgba(37, 99, 235, 0.18), transparent 70%),
+            radial-gradient(50% 40% at 50% 100%, rgba(79, 70, 229, 0.28), transparent 70%),
+            linear-gradient(180deg, #0a1233 0%, #070b1f 50%, #03050f 100%);
     }
 }
 

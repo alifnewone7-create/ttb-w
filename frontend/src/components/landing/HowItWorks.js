@@ -28,7 +28,7 @@ export const HowItWorks = () => (
                   {s.n}
                 </span>
                 <p className="eyebrow mt-6">Chapter {s.n}</p>
-                <h3 className="mt-3 font-display text-2xl sm:text-[1.6rem] font-extrabold leading-[0.95] text-white">
+                <h3 className="mt-3 font-display text-2xl sm:text-[1.6rem] font-extrabold leading-[1.08] text-white">
                   {s.title}
                 </h3>
                 <p className="mt-4 text-[15px] sm:text-base leading-relaxed fog">{s.body}</p>

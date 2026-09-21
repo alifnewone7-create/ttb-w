@@ -1,4 +1,3 @@
-import { useLenis } from "@/hooks/useLenis";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { Marquee } from "@/components/landing/Marquee";
@@ -12,7 +11,6 @@ import { Footer } from "@/components/landing/Footer";
 import { MobileCTA } from "@/components/landing/MobileCTA";
 
 export default function Landing() {
-  useLenis();
   return (
     <main className="relative overflow-x-clip" data-testid="landing-page">
       <div className="page-bg" />

@@ -12,8 +12,8 @@ Build a landing page: Name TTB KING; Theme Blue & Black (gradient colour grading
 - React (CRA/craco) + Tailwind + shadcn Accordion + framer-motion + lenis (smooth scroll)
 - Frontend-only landing page; FastAPI/Mongo template backend untouched
 - Design tokens: `/app/design_guidelines.json`, CSS in `/app/frontend/src/index.css`
-- Fonts: Nunito 800 ALL-CAPS (display), Inter (body); Phosphor Icons; original Telegram icon for CTAs
-- Design rule: Discord gradient theme, everything centered, no side-aligned content
+- Fonts: Sora 800 ALL-CAPS (display), Manrope (body); Phosphor Icons; original Telegram icon for CTAs
+- Design rule: Blue & indigo on blue-black gradient theme (#070b1f base, #2563eb→#4f46e5 gradients), everything centered, no side-aligned content, NO smooth-scroll/parallax (Lenis removed per user)
 - Files: `src/pages/Landing.js`, `src/components/landing/*`, `src/lib/site.js` (all copy + links), `src/hooks/useLenis.js`
 - Assets: `public/og-image.png`, `favicon.ico/png`, `logo192/512.png`
 - Meta/OG tags in `public/index.html`
@@ -32,6 +32,7 @@ Build a landing page: Name TTB KING; Theme Blue & Black (gradient colour grading
 - Footer: fully centered (brand, CTA, links, disclaimer)
 - Sticky navbar w/ mobile menu, mobile sticky Join CTA
 - Testing: iteration_3.json — 100% pass desktop 1920 + mobile 390
+- Rev 2 (same day): font → Sora/Manrope; palette → blue & indigo on blue-black (pink/purple removed); Lenis smooth scroll + hero parallax removed; header→hero gap reduced (pt-112/128/140px); all cards gradient w/ blue glow shadow; subtle grid texture in hero
 
 ## Backlog
 - P1: Real member proof screenshots in testimonials (user to provide)

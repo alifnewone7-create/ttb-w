@@ -21,7 +21,7 @@ export const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color] duration-500 ${
-        scrolled ? "bg-[#0e0f2d]/92 backdrop-blur-xl" : "bg-transparent"
+        scrolled ? "bg-[#070b1f]/92 backdrop-blur-xl" : "bg-transparent"
       }`}
       data-testid="navbar"
     >
@@ -75,7 +75,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#0e0f2d]/98 backdrop-blur-xl"
+            className="md:hidden bg-[#070b1f]/98 backdrop-blur-xl"
             data-testid="nav-mobile-menu"
           >
             <ul className="flex flex-col px-6 py-4">

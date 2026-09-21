@@ -1,100 +1,87 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Lightning, ShieldCheck, UsersThree } from "@phosphor-icons/react";
-import { MaskedLines } from "./Reveal";
 import { TelegramIcon } from "./TelegramIcon";
 import { TELEGRAM_URL } from "@/lib/site";
 
 const EASE = [0.22, 1, 0.36, 1];
 const fade = (delay) => ({
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 18 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.9, delay, ease: EASE },
+  transition: { duration: 0.7, delay, ease: EASE },
 });
 
-export const Hero = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const glowY = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 110]);
-  const fadeOut = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+export const Hero = () => (
+  <section id="top" className="relative overflow-hidden pt-[112px] pb-16 sm:pt-[128px] sm:pb-20 lg:pt-[140px] lg:pb-24" data-testid="hero-section">
+    <div className="absolute inset-0 bg-[linear-gradient(180deg,#0f1f5c_0%,#0a1233_40%,transparent_100%)]" />
+    <div className="glow glow-blurple left-1/2 top-[-20%] h-[640px] w-[640px] -translate-x-1/2" />
+    <div className="glow glow-purple left-[-10%] top-[30%] h-[420px] w-[420px]" />
+    <div className="glow glow-pink right-[-10%] top-[30%] h-[420px] w-[420px]" />
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_30%,#000_30%,transparent_100%)]" />
 
-  return (
-    <section
-      ref={ref}
-      id="top"
-      className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-24 lg:pt-36"
-      data-testid="hero-section"
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,#1d2170_0%,#141647_45%,transparent_100%)]" />
-      <motion.div style={{ y: glowY }} className="glow glow-blurple left-1/2 top-[-10%] h-[620px] w-[620px] -translate-x-1/2" />
-      <div className="glow glow-purple left-[-10%] top-[30%] h-[460px] w-[460px]" />
-      <div className="glow glow-pink right-[-10%] top-[35%] h-[460px] w-[460px]" />
-
+    <div className="relative mx-auto flex w-full max-w-[920px] flex-col items-center px-5 text-center sm:px-8">
       <motion.div
-        style={{ y: textY, opacity: fadeOut }}
-        className="relative mx-auto flex w-full max-w-[900px] flex-col items-center px-5 text-center sm:px-8"
+        {...fade(0.1)}
+        className="inline-flex items-center gap-2.5 rounded-[104px] border border-blue-300/20 bg-blue-500/10 px-4 py-2"
+        data-testid="hero-badge"
       >
-        <motion.div
-          {...fade(0.3)}
-          className="inline-flex items-center gap-2.5 rounded-[104px] border border-white/10 bg-white/10 px-4 py-2 backdrop-blur"
-          data-testid="hero-badge"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#57f287] opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#57f287]" />
-          </span>
-          <span className="text-[13px] font-medium tracking-[0.04em] text-white">Live · Free Telegram community</span>
-        </motion.div>
-
-        <MaskedLines
-          as="h1"
-          delay={0.45}
-          lines={["Learn to trade", "binary markets", "with the king"]}
-          className="mt-8 text-[2.25rem] sm:text-[3.6rem] lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[0.92] text-white"
-          data-testid="hero-title"
-        />
-
-        <motion.p
-          {...fade(0.95)}
-          className="mt-8 max-w-[600px] text-base md:text-lg fog leading-relaxed"
-          data-testid="hero-subtitle"
-        >
-          TTB KING is a growing binary trading community for market insights, trading strategies, educational content
-          and real discussion. Learn, analyze &amp; trade responsibly with the community.
-        </motion.p>
-
-        <motion.div {...fade(1.1)} className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
-          <a
-            href={TELEGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-blurple w-full sm:w-auto"
-            data-testid="hero-join-telegram-btn"
-          >
-            <TelegramIcon className="h-5 w-5" /> Join Free Telegram Channel
-          </a>
-          <a href="#features" className="btn-white w-full sm:w-auto" data-testid="hero-explore-btn">
-            Explore the channel
-          </a>
-        </motion.div>
-
-        <motion.ul
-          {...fade(1.25)}
-          className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3.5 text-[15px] fog"
-          data-testid="hero-trust-list"
-        >
-          {[
-            [UsersThree, "15,000+ traders"],
-            [Lightning, "100+ signals daily"],
-            [ShieldCheck, "Risk-first mentorship"],
-          ].map(([Icon, t]) => (
-            <li key={t} className="flex items-center gap-2.5">
-              <Icon size={22} weight="duotone" className="text-white" /> {t}
-            </li>
-          ))}
-        </motion.ul>
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#57f287] opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-[#57f287]" />
+        </span>
+        <span className="text-[13px] font-semibold tracking-[0.04em] text-blue-100">Live · Free Telegram community</span>
       </motion.div>
-    </section>
-  );
-};
+
+      <motion.h1
+        {...fade(0.2)}
+        className="mt-7 text-[2.25rem] sm:text-[3.4rem] lg:text-[4.25rem] xl:text-[4.75rem] font-extrabold leading-[1.02] text-white"
+        data-testid="hero-title"
+      >
+        Learn to trade
+        <br />
+        binary markets
+        <br />
+        <span className="grad-text">with the king</span>
+      </motion.h1>
+
+      <motion.p
+        {...fade(0.35)}
+        className="mt-7 max-w-[620px] text-base md:text-lg fog leading-relaxed"
+        data-testid="hero-subtitle"
+      >
+        TTB KING is a growing binary trading community for market insights, trading strategies, educational content
+        and real discussion. Learn, analyze &amp; trade responsibly with the community.
+      </motion.p>
+
+      <motion.div {...fade(0.5)} className="mt-9 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
+        <a
+          href={TELEGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-blurple w-full sm:w-auto"
+          data-testid="hero-join-telegram-btn"
+        >
+          <TelegramIcon className="h-5 w-5" /> Join Free Telegram Channel
+        </a>
+        <a href="#features" className="btn-white w-full sm:w-auto" data-testid="hero-explore-btn">
+          Explore the channel
+        </a>
+      </motion.div>
+
+      <motion.ul
+        {...fade(0.65)}
+        className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3.5 text-[15px] fog"
+        data-testid="hero-trust-list"
+      >
+        {[
+          [UsersThree, "15,000+ traders"],
+          [Lightning, "100+ signals daily"],
+          [ShieldCheck, "Risk-first mentorship"],
+        ].map(([Icon, t]) => (
+          <li key={t} className="flex items-center gap-2.5">
+            <Icon size={22} weight="duotone" className="text-blue-300" /> {t}
+          </li>
+        ))}
+      </motion.ul>
+    </div>
+  </section>
+);
