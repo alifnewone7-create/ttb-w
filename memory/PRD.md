@@ -12,23 +12,26 @@ Build a landing page: Name TTB KING; Theme Blue & Black (gradient colour grading
 - React (CRA/craco) + Tailwind + shadcn Accordion + framer-motion + lenis (smooth scroll)
 - Frontend-only landing page; FastAPI/Mongo template backend untouched
 - Design tokens: `/app/design_guidelines.json`, CSS in `/app/frontend/src/index.css`
-- Fonts: Outfit (display), Plus Jakarta Sans (body), JetBrains Mono (labels)
+- Fonts: Nunito 800 ALL-CAPS (display), Inter (body); Phosphor Icons; original Telegram icon for CTAs
+- Design rule: Discord gradient theme, everything centered, no side-aligned content
 - Files: `src/pages/Landing.js`, `src/components/landing/*`, `src/lib/site.js` (all copy + links), `src/hooks/useLenis.js`
 - Assets: `public/og-image.png`, `favicon.ico/png`, `logo192/512.png`
 - Meta/OG tags in `public/index.html`
 
 ## Implemented (June 2026)
-- Sticky glass navbar w/ mobile menu, Telegram CTA
-- Kinetic hero: masked line-by-line reveal, parallax orbs, 3D tilt signal card w/ animated chart + cycling signal ticker
-- Editorial marquee strip
-- Bento features grid (5 cards)
-- Animated stats counters
-- Numbered "chapter" How-it-works w/ sticky heading
-- Testimonials slow marquee + 4.9 rating
-- FAQ accordion (7 items)
-- Final gradient CTA band w/ avatar halo
-- Footer w/ Telegram link, risk disclaimer
-- Mobile sticky Join CTA
+- Discord 2024 gradient theme: deep navy base (#0e0f2d) + blurple→purple→pink radial glows (`.page-bg` fixed layer + per-section `.glow`)
+- Gradient primary button (`.btn-blurple` = #5865f2→#7b5cff→#a23bf5), gradient glass cards (`.card-grad`), gradient stat numbers (`.grad-text`)
+- ALL content center-aligned (SectionHead default `align="center"`); no left/right split layouts
+- Hero: centered badge + ALL-CAPS Nunito 800 title + subtitle + 2 CTAs + trust list (signal card removed per user)
+- Features: full-width gradient "signals" card + 2x2 gradient cards, content centered
+- Stats: 4 centered gradient cards w/ animated counters
+- How it works: gradient panel, 3 centered step cards side-by-side (stacked on mobile)
+- Testimonials: centered heading + rating, marquee of gradient cards
+- FAQ: centered accordion (max-w-3xl)
+- Final CTA: blurple→pink gradient band, avatar on top, centered
+- Footer: fully centered (brand, CTA, links, disclaimer)
+- Sticky navbar w/ mobile menu, mobile sticky Join CTA
+- Testing: iteration_3.json — 100% pass desktop 1920 + mobile 390
 
 ## Backlog
 - P1: Real member proof screenshots in testimonials (user to provide)
